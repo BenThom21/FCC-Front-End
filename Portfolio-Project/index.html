@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html land="en-US">
+  <head>
+    <meta charset = "UTF-8">
+    <title>Ben Thompson | Personal Portfolio</title>
+    <link rel ="stylesheet" type="text/css" href="styles.css">
+
+<!-- Loading libraries and such -->
+
+    <!-- Bootstrap -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+
+    <!-- FontAwesome -->
+    <script src="https://use.fontawesome.com/60341af668.js"></script>
+
+    <!-- jQuery -->
+    <script src="jquery-3.1.1.min.js"></script>
+
+
+  </head>
+
+
+  <body>
+    <!-- // HEADER //-->
+    <header>
+      <!--// NAV BAR //-->
+      <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"><span class="fa fa-home fa-lg" aria-hidden="true"></span></a>
+          </div>
+
+          <div class="navbar-collapse collapse" id="navbar-collapse-1" aria-expanded="false" style="height: 1px;">
+              <ul class="nav navbar-nav navbar-right">
+                  <li class="#"><a href="#about-section" class="nav-link" ><i class="fa fa-id-card-o" aria-hidden="true"></i>About<span class="sr-only">(current)</span></a></li>
+                  <li><a href="#" class="nav-link"><i class="fa fa-code" aria-hidden="true"></i>Work</a></li>
+                  <li><a href="#" class="nav-link"><i class="fa fa-fw fa-envelope-o" aria-hidden="true"></i>Contact</a></i></li>
+              </ul>
+          </div>
+        </div><!-- container-fluid end -->
+      </nav>
+    <!-- end of nav bar -->
+
+
+      <div class="container header-content">
+        <h1 class="animated fadeInDown">Ben Thompson</h1>
+        <p class="animated fadeInUp">Aspiring Front-End Developer</p>
+
+        <hr> <!-- Divider -->
+
+    <!-- Social Links -->
+        <div class="social-links">
+          <a href="https://github.com/BenThom21" target="_blank" class="github-link"><i class="fa fa-github" aria-hidden="true"></i></a>
+          <a href="https://www.freecodecamp.com/benthom21" target="_blank" class="fcc-link"><i class="fa fa-free-code-camp" aria-hidden="true"></i></a>
+          <a href="https://www.linkedin.com/in/benthompson2014" target="_blank" class="linkedin-link"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+          <a href="https://twitter.com/BenThom21" target="_blank" class="twitter-link"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+        </div>
+      </div>  <!--End header content -->
+
+      <!--This is an arrow to be placed at the bottom to go to the next page -->
+      <div class="down">
+          <a class="next-page" href="#about-section"><i class="animated pulse infinite fa fa-chevron-circle-down fa-2x" aria-hidden="true"></i></a>
+      </div>
+
+    </header>
+
+    <!-- BEGIN ABOUT SECTION -->
+    <div class="container-fluid">
+      <div id="about-section">
+        <h1>About</h1>
+
+        <div class="about-left col-sm-6 col-xs-12">
+          <img src="https://pbs.twimg.com/profile_images/514069123962114048/O_OCcbGL.jpeg" class="profile-pic img-responsive img-circle">
+        </div>
+        <div class="col-sm-6 col-xs-12">
+          <p class="about-p">
+            My name is Ben Thompson and I like to build stuff!
+            <br>
+            I'm an aspiring web developer learning to code with the help of countless others and communities online. I'm always looking to learn more and expand my skill set. Take a look at some of the cool projects that I have worked on and see how I spend much of my freetime!
+          </p>
+        </div>
+      </div>
+    </div> <!--end contianer fluid-->
+    <!-- END ABOUT SECTION -->
+
+    <script>
+
+    // closing navbar on click -- since it stays open on its own //
+      $(document).on('click',function(){
+      $('.collapse').collapse('hide');
+      })
+
+    // Changing the color of the navbar when scrolled
+      jQuery(document).ready(function($) {
+      $(window).scroll(function() {
+        var scrollPos = $(window).scrollTop(),
+            navbar = $('.navbar-default');
+
+        if (scrollPos > 20) {
+          navbar.addClass('change-color');
+        } else {
+          navbar.removeClass('change-color');
+        }
+      });
+      });
+    </script>
+  </body>
+</html>
