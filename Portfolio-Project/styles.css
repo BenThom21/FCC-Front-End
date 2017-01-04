@@ -1,0 +1,170 @@
+/* Google Fonts Imported */
+@import url('https://fonts.googleapis.com/css?family=Racing+Sans+One');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+
+/* --General Style-- */
+p {
+  font-family: 'Roboto', sans-serif;
+}
+
+/* --Navbar Styling-- */
+ .navbar {
+  background: none;
+  border: none;
+}
+.navbar .navbar-header .icon-bar {
+  color: white;
+  background-color: white;
+}
+
+
+.navbar .container-fluid .fa {
+  color: white;
+}
+.navbar .container-fluid .navbar-collapse .navbar-nav .nav-link {
+  color: white;
+ }
+
+/* Chaning links color on hover/focus */
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #C6BEC1 !important;
+  transition: color .5s;
+}
+.navbar .navbar-header .navbar-brand > span:hover, .navbar .navbar-header .navbar-brand > span:focus {
+  color: #C6BEC1;
+  transition: color .5s;
+}
+
+.navbar i {
+  padding-right: 8px;
+}
+
+/* Navbar color change */
+.navbar-default {
+  background: transparent;
+  border: none;
+  transition: 0.3s all linear;
+}
+.navbar-default.change-color {
+  background-color: #697082;
+/*   -webkit-box-shadow: 0px 0px 4px 0px rgba(221,221,221,1);
+  -moz-box-shadow: 0px 0px 4px 0px rgba(221,221,221,1);
+  box-shadow: 0px 0px 4px 0px rgba(221,221,221,1); */
+}
+
+
+/*  --Header Styling-- */
+header {
+  background: url('https://static.pexels.com/photos/196665/pexels-photo-196665.jpeg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  max-height: 100vh;
+}
+.header-content {
+  text-align: center;
+  padding-top: 33vh;
+  color: white;
+}
+.animated {
+  -moz-animation-delay: 1s;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+}
+.header-content h1 {
+  font-family: 'Racing Sans One', cursive;
+  font-size: 4.5em;
+}
+.header-content p {
+  font-size: 1.7em;
+}
+
+hr {
+  display: block;
+  padding: 0;
+  width: 21em;
+  height: 0;
+  max-height: 0;
+  line-height: 1;
+  margin: 0.5em auto 0.5em auto;
+  border-width: 2px;
+}
+
+.social-links a {
+  margin: 5px;
+  color: white;
+  font-size: 2em;
+}
+/* Specific colors of social links when hovered */
+.social-links .github-link:hover {
+  color: #000
+}
+.social-links .fcc-link:hover {
+  color: #106E29
+}
+.social-links .linkedin-link:hover {
+  color: #279CD6
+}
+.social-links .twitter-link:hover {
+  color: #169FFA
+}
+
+
+.down {
+  position: absolute;
+  bottom: 3em;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  margin-top: auto;
+}
+.next-page {
+  color: white;
+  font-size: 1.5em;
+}
+.next-page:hover {
+  color: #C6BEC1;
+/*   Would really like to have this transform in some way either on hover or click */
+}
+
+/* --End Header Styling-- */
+
+
+
+/* --Begin @media Styling for Smaller Screens-- */
+/* Header */
+@media (max-width: 767px) {
+  .header-content h1 {
+    font-size: 2.5em;
+  }
+  .header-content p {
+    font-size: 1.2em;
+  }
+  .social-links a {
+  margin: 3px;
+  font-size: 1.75em;
+  }
+  .next-page {
+  font-size: 1.2em;
+  }
+  hr {
+    width: 16em;
+  }
+}
+
+
+/* ABOUT SECTION STYLING */
+#about-section {
+  text-align: center;
+}
+
+.profile-pic {
+  width: 75%;
+  max-width: 25em;
+/*   center inside of div */
+}
+
+.about-p {
+/*   align vertically while keeping text-align(ed) left */
+}
