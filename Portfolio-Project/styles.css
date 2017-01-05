@@ -155,16 +155,29 @@ hr {
 
 
 /* ABOUT SECTION STYLING */
-#about-section {
+.about-section {
   text-align: center;
+  height: 25em;
+  background-color: red;
+}
+.about-section h1 {
+  margin-bottom: 20px;
 }
 
 .profile-pic {
   width: 75%;
   max-width: 25em;
-/*   center inside of div */
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .about-p {
 /*   align vertically while keeping text-align(ed) left */
+  line-height: 2.2em;
+  text-align: left;
+  height: 24em;
+  display: table-cell;
+  vertical-align: middle;
+  background-color: yellow;
+/*   Does the paragraph need the height or does the div get it that contains the paragraph? */
 }
