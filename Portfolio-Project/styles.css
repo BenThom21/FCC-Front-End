@@ -1,6 +1,7 @@
 /* Google Fonts Imported */
 @import url('https://fonts.googleapis.com/css?family=Racing+Sans+One');
 @import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Oswald');
 
 
 /* --General Style-- */
@@ -13,11 +14,15 @@ p {
   background: none;
   border: none;
 }
+
+.navbar i {
+  padding-right: 8px;
+}
+
 .navbar .navbar-header .icon-bar {
   color: white;
   background-color: white;
 }
-
 
 .navbar .container-fluid .fa {
   color: white;
@@ -34,10 +39,6 @@ p {
 .navbar .navbar-header .navbar-brand > span:hover, .navbar .navbar-header .navbar-brand > span:focus {
   color: #C6BEC1;
   transition: color .5s;
-}
-
-.navbar i {
-  padding-right: 8px;
 }
 
 /* Navbar color change */
@@ -132,6 +133,91 @@ hr {
 
 
 
+/* --ABOUT SECTION STYLING-- */
+#about-section {
+/*   background-color: red; */
+  background-color: #42646E;
+  font-family: 'Roboto', sans-serif;
+  height: 36em;
+  color: white;
+  margin-top: -20px;
+/*   This screws up the view when you link here, try to fix this properly */
+}
+#about-section h2 {
+  padding-top: 25px;
+  margin-bottom: 25px;
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+  font-size: 2.7em;
+/*   Stlye all H2s this way? */
+}
+
+.about-left {
+  height: 28em;
+  display: flex;
+  aligh-items: center;
+  justify-content: center;
+}
+.profile-pic {
+  max-width: 28em;
+  padding-top: 8px;
+  margin: 0;
+}
+
+.about-p {
+  line-height: 2em;
+  text-align: left;
+/*   background-color: yellow; */
+  margin: 0;
+}
+
+.about-right {
+  font-size: 1.2em;
+  min-height: 21em;
+  max-height: 28em;
+  display: flex;
+  align-items: center;
+  background-color: #42646E;
+}
+
+/* --end about section styling-- */
+
+
+
+/* --BEGIN WORK SECTION STYLING-- */
+
+#work-section h2 {
+  padding-top: 25px;
+  margin-bottom: 45px;
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+  font-size: 2.7em;
+/*   think about just styling all h2s as center at the end */
+}
+
+.work-info h4 {
+  margin-bottom: 15px;
+  font-family: 'Oswald', sans-serif;
+}
+
+.technologies-used {
+  display: inline-block;
+}
+
+.row > hr {
+  padding: 20px;
+  margin-top: 40px;
+}
+
+
+
+
+
+
+
+
+
+
 /* --Begin @media Styling for Smaller Screens-- */
 /* Header */
 @media (max-width: 767px) {
@@ -153,31 +239,19 @@ hr {
   }
 }
 
+/* About */
+@media (max-width: 767px) {
+  .about-right {
+    min-height: 15em;
+  }
+  .about-left {
+    height: 19em;
+  }
+  .about-right p {
+    margin: 30px;
+  }
+  .profile-pic {
+    height: 18em;
+  }
 
-/* ABOUT SECTION STYLING */
-.about-section {
-  text-align: center;
-  height: 25em;
-  background-color: red;
-}
-.about-section h1 {
-  margin-bottom: 20px;
-}
-
-.profile-pic {
-  width: 75%;
-  max-width: 25em;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-.about-p {
-/*   align vertically while keeping text-align(ed) left */
-  line-height: 2.2em;
-  text-align: left;
-  height: 24em;
-  display: table-cell;
-  vertical-align: middle;
-  background-color: yellow;
-/*   Does the paragraph need the height or does the div get it that contains the paragraph? */
 }
