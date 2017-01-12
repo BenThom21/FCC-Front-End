@@ -25,6 +25,9 @@
 
   <!-- jQuery -->
       <script src="jquery-3.1.1.min.js"></script>
+    
+    <!--   Font Awesome for hover.css -->
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" media="all">
 
 
   </head>
@@ -150,49 +153,197 @@
                   <p class="description">
                     The first project for Free Code Camp's Front-end Certification - a tribute page to someone you admire. I chose my favorite golf icon, Arnold Palmer, who passed away in 2016.
                   </p>
-                  <span class="technologies-used">
-                    <span class="label label-default">Default</span>
-                    <span class="label label-danger">HTML</span>
-                    <span class="label label-primary">CSS</span>
-                  </span>
-                </div>
-              </div>
-            </div>  <!--end container-->
-            <hr>
-          </div>
-
-
-          <div class="row">
-            <div class="container">
-              <div class="work-sample">
-                <div class="work-img col-sm-6 col-xs-9">
-                  <img src="http://i66.tinypic.com/2gwuryx.jpg" alt="Tribute page to Arnold Palmer" class="img-responsive img-thumbnail">
-                </div>
-                <div class="work-info col-sm-6 col-xs-9">
-                  <h4>Tribute Page - Free Code Camp</h4>
-                  <p class="description">
-                    The first project for Free Code Camp's Front-end Certification - a tribute page to someone you admire. I chose my favorite golf icon, Arnold Palmer, who passed away in 2016.
-                  </p>
-                  <span class="technologies-used">
-                    <span class="label label-default">Default</span>
-                    <span class="label label-danger">HTML</span>
-                    <span class="label label-primary">CSS</span>
-                  </span>
-                </div>
-              </div>
-            </div>  <!--end container-->
-            <hr>
-          </div>
-
-
-
-        </div> <!--End ".work-section" -->
+<header>
+  <!--// NAV BAR //-->
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#home"><span class="fa fa-home fa-lg" aria-hidden="true"></span></a>
       </div>
-      <!-- END WORK SECTION -->
+
+      <div class="navbar-collapse collapse" id="navbar-collapse-1" aria-expanded="false" style="height: 1px;">
+          <ul class="nav navbar-nav navbar-right">
+              <li class="about-nav"><a href="#about-section" class="nav-link" ><i class="fa fa-id-card-o" aria-hidden="true"></i>About<span class="sr-only">(current)</span></a></li>
+              <li class="work-nav"><a href="#work-section" class="nav-link"><i class="fa fa-code" aria-hidden="true"></i>Work</a></li>
+              <li class="contact-nav"><a href="#contact-section" class="nav-link"><i class="fa fa-fw fa-envelope-o" aria-hidden="true"></i>Contact</a></i></li>
+          </ul>
+      </div>
+    </div><!-- container-fluid end -->
+  </nav>
+<!-- end of nav bar -->
+  
+  
+  <div class="container header-content" id="home">
+    <h1 class="animated fadeInDown">Ben Thompson</h1>
+    <p class="animated fadeInUp">Aspiring Web Developer</p>
+    
+    <hr> <!-- Divider -->
+    
+<!-- Social Links -->
+    <div class="social-links">
+      <a href="https://github.com/BenThom21" target="_blank" class="github-link"><i class="fa fa-github" aria-hidden="true"></i></a>
+      <a href="https://www.freecodecamp.com/benthom21" target="_blank" class="fcc-link"><i class="fa fa-free-code-camp" aria-hidden="true"></i></a>
+      <a href="https://www.linkedin.com/in/benthompson2014" target="_blank" class="linkedin-link"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+      <a href="https://twitter.com/BenThom21" target="_blank" class="twitter-link"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+    </div>
+  </div>  <!--End header content -->
+  
+  <!--This is an arrow to be placed at the bottom to go to the next page -->
+  <div class="down">
+      <a class="next-page" href="#about-section"><i class="animated pulse infinite fa fa-chevron-circle-down fa-2x" aria-hidden="true"></i></a>
+  </div>
+</header>
 
 
-    </div> <!--end contianer fluid-->
+  <!-- BEGIN ABOUT SECTION -->
+  <div class="about-container" id="about-section">
+  <!-- keep this as an ID for linking purposes only -->
+      <h2>About</h2>
+    <div class="container-fluid">
+      <div class="row about-row">
+        <div class="col-sm-5 col-xs-12 about-left">
+          <img src="https://pbs.twimg.com/profile_images/514069123962114048/O_OCcbGL.jpeg" class="profile-pic img-responsive img-circle">
+        </div>
+        <div class=" col-sm-7 col-xs-12 about-right">
+          <p class="hi">
+            Hi, I'm Ben!
+          </p>
+          <p class="about-p">
+            Chicago-based aspiring web developer, dog lover, and film buff. 
+            <br>
+            I love building beautiful websites. I'm teaching myself to code with the help of countless individuals and communites. Take a look at some of the cool projects that I have worked on and see how I spend much of my free time.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
 
+  <!-- END ABOUT SECTION -->
+  
+  <!-- BEGIN WORK SECTION -->
+  <div class="container work-container">
+    <div id="work-section">
+    <!-- See if this col-12 messes anything up -->
+      <h2>Work</h2>
+      
+      <div class="row">
+        <div class="container">
+          <div class="work-sample">
+            <div class="work-img col-sm-6 col-xs-9 col-xs-offset-1 col-sm-offset-0">
+<!-- NOTE: offset pulls all screen sizes over? figure this out -->
+<!--               offset 0? -->
+              <img src="http://i63.tinypic.com/2cshsnq.png" alt="Tribute page to Arnold Palmer" class="img-responsive img-thumbnail">
+            </div>
+            <div class="work-info col-sm-6 col-xs-9 col-xs-offset-1 col-sm-offset-0">
+              <h4>Tribute Page - Free Code Camp</h4>
+              <p class="description">
+                The first project for Free Code Camp's Front-End Certification - a tribute page to someone you admire. I chose my favorite golf icon, Arnold Palmer, who passed away in 2016. This was my first real attempt to put a page together and my first experience with Bootstrap. 
+              </p>
+              <p>
+                <span class="technologies-used">
+                  <span class="label label-default">Bootstrap</span>
+                  <span class="label label-danger">HTML</span>
+                  <span class="label label-primary">CSS</span>
+                </span>
+              </p>
+              <div class="work-buttons">
+  <a target="_blank" href="https://github.com/BenThom21/FCC-Front-End/tree/master/Tribute-Page"><button class="hvr-icon-pop cp" type="button">Demo</button></a>
+  <a target="_blank" class="github-button" href="https://github.com/BenThom21/FCC-Front-End/tree/master/Tribute-Page"><button class="hvr-icon-pop" id="github-button" type="button"> Code</button></a>
+              </div>
+            </div>
+          </div>
+        </div>  <!--end container-->  
+        <hr>
+      </div>
+      
+      
+      <div class="row">
+        <div class="container">
+          <div class="work-sample">
+            <div class="work-img col-sm-6 col-xs-9 col-xs-offset-1 col-sm-offset-0">
+              <img src="http://i66.tinypic.com/2gwuryx.jpg" alt="Tribute page to Arnold Palmer" class="img-responsive img-thumbnail">
+            </div>
+            <div class="work-info col-sm-6 col-xs-9 col-xs-offset-1 col-sm-offset-0">
+              <h4>Coming Soon!</h4>
+              <p class="description">
+                I will update this with my favorite projects as I build them. Come back soon and take a look!
+              </p>
+              <p>
+                <span class="technologies-used">
+                  <span class="label label-default">Default</span>
+                  <span class="label label-danger">HTML</span>
+                  <span class="label label-primary">CSS</span>
+                </span>
+              </p>
+              <div class="work-buttons">
+  <a target="_blank" href="#"><button class="hvr-icon-pop cp" type="button">Demo</button></a>
+  <a target="_blank" class="github-button" href="#"><button class="hvr-icon-pop" id="github-button" type="button"> Code</button></a>
+              </div>
+            </div>
+          </div>
+        </div>  <!--end container-->  
+        <hr>
+      </div>
+      
+      
+      <div class="row">
+        <div class="container">
+          <div class="work-sample">
+            <div class="work-img col-sm-6 col-xs-9 col-xs-offset-1 col-sm-offset-0">
+              <img src="http://i66.tinypic.com/2gwuryx.jpg" alt="Tribute page to Arnold Palmer" class="img-responsive img-thumbnail">
+            </div>
+            <div class="work-info col-sm-6 col-xs-9 col-xs-offset-1 col-sm-offset-0">
+              <h4>Coming Soon!</h4>
+              <p class="description">
+                I will update this with my favorite projects as I build them. Come back soon and take a look!
+              </p>
+              <p>
+                <span class="technologies-used">
+                  <span class="label label-default">Default</span>
+                  <span class="label label-danger">HTML</span>
+                  <span class="label label-primary">CSS</span>
+                </span>
+              </p>
+              <div class="work-buttons">
+  <a target="_blank" href="#"><button class="hvr-icon-pop cp" type="button">Demo</button></a>
+  <a target="_blank" class="github-button" href="#"><button class="hvr-icon-pop" id="github-button" type="button"> Code</button></a>
+              </div>
+            </div>
+          </div>
+        </div>  <!--end container-->  
+      </div>
+      
+      
+      
+    </div> <!--End ".work-section" -->
+  </div>
+  <!-- END WORK SECTION -->
+  
+<!--   BEGIN CONTACT SECTION -->
+  <div class="container-fluid contact-container">
+    <div class="col-xs-12" id="contact-section">
+      <h2> Contact </h2>
+      <p> Like what you see?</p>
+      <p> 
+        I'm continuing to learn but always looking for a new challenge and experience.
+        <br>
+        Reach out, ask questions, tell me about your project, and let's see how I can help you out.</p>
+    </div> <!--end ".contact-section' -->
+  </div> <!--end container-fluid -->
+<!--     END CONTACT SECTION -->
+  
+<!-- BEGIN FOOTER -->
+<div class="container-fluid">
+  <div class="footer col-xs-12">
+  </div>
+</div>
+<!-- end footer -->
 
 
 
