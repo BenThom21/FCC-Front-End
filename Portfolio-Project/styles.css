@@ -8,6 +8,13 @@
 p {
   font-family: 'Roboto', sans-serif;
 }
+h2 {
+  padding-top: 25px;
+  margin-bottom: 25px;
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+  font-size: 2.7em;
+}
 
 /* --Navbar Styling-- */
  .navbar {
@@ -49,9 +56,6 @@ p {
 }
 .navbar-default.change-color {
   background-color: #697082;
-/*   -webkit-box-shadow: 0px 0px 4px 0px rgba(221,221,221,1);
-  -moz-box-shadow: 0px 0px 4px 0px rgba(221,221,221,1);
-  box-shadow: 0px 0px 4px 0px rgba(221,221,221,1); */
 }
 
 
@@ -132,69 +136,45 @@ hr {
 /* --End Header Styling-- */
 
 
-
 /* --ABOUT SECTION STYLING-- */
 #about-section {
-/*   background-color: red; */
   background-color: #42646E;
   font-family: 'Roboto', sans-serif;
-  height: 36em;
   color: white;
   margin-top: -20px;
 /*   This screws up the view when you link here, try to fix this properly */
+  
 }
-#about-section h2 {
-  padding-top: 25px;
-  margin-bottom: 25px;
-  text-align: center;
-  font-family: 'Oswald', sans-serif;
-  font-size: 2.7em;
-/*   Stlye all H2s this way? */
-}
-
-.about-left {
-  height: 28em;
+.about-row {
   display: flex;
-  aligh-items: center;
   justify-content: center;
-}
-.profile-pic {
-  max-width: 28em;
-  padding-top: 8px;
-  margin: 0;
+  align-items: center;
 }
 
+.profile-pic {
+  max-width: 26em;
+  padding-top: 8px;
+  padding-bottom: 10px;
+  margin: 20px auto;
+}
+
+.hi {
+  font-size: 1.5em;
+}
 .about-p {
   line-height: 2em;
-  text-align: left;
-/*   background-color: yellow; */
   margin: 0;
+  font-size: 1.1em;
+  padding-right: 10px;
 }
-
-.about-right {
-  font-size: 1.2em;
-  min-height: 21em;
-  max-height: 28em;
-  display: flex;
-  align-items: center;
-  background-color: #42646E;
-}
-
 /* --end about section styling-- */
 
 
 
 /* --BEGIN WORK SECTION STYLING-- */
-
 #work-section h2 {
-  padding-top: 25px;
-  margin-bottom: 45px;
-  text-align: center;
-  font-family: 'Oswald', sans-serif;
-  font-size: 2.7em;
-/*   think about just styling all h2s as center at the end */
+  padding-bottom: 2em;
 }
-
 .work-info h4 {
   margin-bottom: 15px;
   font-family: 'Oswald', sans-serif;
@@ -203,6 +183,7 @@ hr {
 .technologies-used {
   display: inline-block;
 }
+
 
 .work-buttons {
   padding-top: 8px;
@@ -218,7 +199,7 @@ hr {
 }
 
 /* Hover.css for custom :hover states on buttons in work section */
-button {
+.work-buttons button {
   background: none;
   color: black;
   font-family: 'Roboto', sans-serif;
@@ -226,14 +207,14 @@ button {
   height: 30px;
   width: 100px;
 /*   line-height: 30px; */
-  margin: 10px;
+/*   margin: 10px; */
   text-align: center;
   border: 1px solid #697082;
   border-radius: 24px;
   display: inline-block;
   overflow: hidden;
 }
-button:hover{
+.work-buttons button:hover{
   background-color: #697082;
   color: white;
   transition-duration: .3s;
@@ -286,7 +267,7 @@ button:hover{
   -webkit-animation-iteration-count: 1;
   animation-iteration-count: 1;
 }
-
+/* End hover.css button styling...that's a lot of code right there... */
 
 .row > hr {
   padding: 20px;
@@ -294,7 +275,80 @@ button:hover{
   width: 70%;
 }
 
+/* END WORK SECTION STYLING */
 
+
+
+.contact-container{
+  margin-top: 4em;
+  margin-bottom: 3em;
+}
+.contact-section {
+  text-align: center;
+}
+
+/* Hover.css */
+.hvr-bounce-to-right:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #2098D1;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: 0 50%;
+  transform-origin: 0 50%;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-bounce-to-right:hover, .hvr-bounce-to-right:focus, .hvr-bounce-to-right:active {
+  color: white;
+}
+.hvr-bounce-to-right:hover:before, .hvr-bounce-to-right:focus:before, .hvr-bounce-to-right:active:before {
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+  -webkit-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+  transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+}
+/* end hover.css contact styling */
+
+.contact-buttons {
+  height: 50px;
+  margin: auto;
+  text-align: center;
+  width: 60%;
+}
+.social {
+  display: inline-block;
+  width: 45px;
+  height: 45px;
+  line-height: 45px;
+  text-align: center;
+  border: 1px solid #272628;
+  border-radius: 28%;
+  margin-right: 1em;
+}
+
+
+/* END CONTACT SECTION STYLING */
+
+/* BEING FOOTER STYLING */
+.footer {
+  background-color: #272628;
+  color: white;
+  text-align: center;
+  height: 6em;
+}
+.footer p {
+  padding-top: 1em;
+}
 
 
 /* --Begin @media Styling for Smaller Screens-- */
@@ -332,9 +386,23 @@ button:hover{
   .profile-pic {
     height: 18em;
   }
+  .about-row {
+    display: block;
+  }
   
 }
 
 /* Work */
+@media (max-width: 767px) {
+  .work-buttons button{
+    margin-top: 8px;
+  }
+  
+  #work-section h2 {
+  padding-bottom: 1em;
+  }
 
+
+  
+} /*end styling*/
 
