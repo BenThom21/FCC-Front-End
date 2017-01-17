@@ -69,7 +69,7 @@ header {
 }
 .header-content {
   text-align: center;
-  padding-top: 33vh;
+  padding-top: 30vh;
   color: white;
 }
 .animated {
@@ -103,22 +103,25 @@ hr {
 }
 /* Specific colors of social links when hovered */
 .social-links .github-link:hover {
-  color: #000
+  color: #000;
 }
 .social-links .fcc-link:hover {
-  color: #106E29
+  color: #106E29;
 }
 .social-links .linkedin-link:hover {
-  color: #279CD6
+  color: #007bb5;
 }
 .social-links .twitter-link:hover {
-  color: #169FFA
+  color: #55acee;
+}
+.social-links .email-link:hover {
+  color:#dd4b39;
 }
 
 
 .down {
   position: absolute;
-  bottom: 3em;
+  bottom: 5em;
   left: 0;
   width: 100%;
   text-align: center;
@@ -130,7 +133,6 @@ hr {
 }
 .next-page:hover {
   color: #C6BEC1;
-/*   Would really like to have this transform in some way either on hover or click */
 }
 
 /* --End Header Styling-- */
@@ -158,15 +160,25 @@ hr {
   margin: 20px auto;
 }
 
-.hi {
-  font-size: 1.5em;
+.hi-sub {
+  font-size: .5em;
+  text-align: center;
 }
+
+.about-p strong {
+  font-size: 1.2em;
+}
+
 .about-p {
   line-height: 2em;
   margin: 0;
-  font-size: 1.1em;
-  padding-right: 10px;
+  padding: 30px;
 }
+
+.location {
+  padding-top: 10px;
+}
+
 /* --end about section styling-- */
 
 
@@ -278,62 +290,135 @@ hr {
 /* END WORK SECTION STYLING */
 
 
-
+/* BEGIN CONTACT SECTION STYLING */
 .contact-container{
   margin-top: 4em;
   margin-bottom: 3em;
 }
 .contact-section {
   text-align: center;
+  font-family: 'Roboto', sans-serif;
 }
 
-/* Hover.css */
-.hvr-bounce-to-right:before {
+.email-button {
+  padding: 30px;
+}
+.contact-button {
+  position: relative;
+  -webkit-perspective: 1000;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform:translate3d(0,0,0);
+  color: #697082;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 1.2em;
+  border: 2px solid #697082;
+  border-radius: 4px;
+  padding: 20px 65px;
+  transition: 0.3s ease-in-out;
+  
+}
+.contact-button > span {
+  text-transform: none;
+  position: absolute;
+  color: white;
+  top: 20px;
+  left: 12px;
+  opacity: 0;
+  transition: all 0s ease 0s;
+}
+
+.contact-button:hover {
+  transition: 0.3s ease-in-out;
+  border: 2px solid #697082;
+  border-radius: 50px;
+  background-color: #697082;
+  color: #697082;
+}
+.contact-button:hover > span {
+  opacity: 1;
+  transition: all 0.25s ease-in-out 0.1s;
+  font-size: 14px;
+}
+.contact-button:before, contact-button:after {
   content: "";
   position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: #2098D1;
-  -webkit-transform: scaleX(0);
-  transform: scaleX(0);
-  -webkit-transform-origin: 0 50%;
-  transform-origin: 0 50%;
-  -webkit-transition-property: transform;
-  transition-property: transform;
-  -webkit-transition-duration: 0.5s;
-  transition-duration: 0.5s;
-  -webkit-transition-timing-function: ease-out;
-  transition-timing-function: ease-out;
+  top: -14px;
+  left: -12px;
+  width: 132px;
+  height: 25px;
 }
-.hvr-bounce-to-right:hover, .hvr-bounce-to-right:focus, .hvr-bounce-to-right:active {
-  color: white;
-}
-.hvr-bounce-to-right:hover:before, .hvr-bounce-to-right:focus:before, .hvr-bounce-to-right:active:before {
-  -webkit-transform: scaleX(1);
-  transform: scaleX(1);
-  -webkit-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
-  transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
-}
-/* end hover.css contact styling */
 
+/* Social buttons at bottom of apge - different from "contact button" */
 .contact-buttons {
-  height: 50px;
+  height: 60px;
   margin: auto;
   text-align: center;
   width: 60%;
+  padding-top: 15px;
+
 }
+
 .social {
   display: inline-block;
   width: 45px;
   height: 45px;
   line-height: 45px;
   text-align: center;
-  border: 1px solid #272628;
+  border: 1.5px solid #272628;
   border-radius: 28%;
   margin-right: 1em;
+}
+
+/* Specific colors for each button */
+.github-social {
+  color: #272628;
+}
+.codepen-social {
+  color: #272628;
+}
+.fcc-social {
+  color: #106E29;
+}
+.twitter-social {
+  color: #55acee;
+}
+.linkedin-social {
+  color: #007bb5;
+}
+.medium-social {
+  color: #3cb371;
+}
+/* Change specific colors on :hover */
+.contact-buttons > a {
+  transition: all .5s;
+}
+.contact-buttons > a:hover, .contact-buttons > a:focus {
+  border: none;
+}
+.contact-buttons > a.github-social:hover, .contact-buttons > a.github-social:focus {
+  color: white;
+  background-color: #272628;
+}
+.contact-buttons > a.codepen-social:hover, .contact-buttons > a.codepen-social:focus {
+  color: white;
+  background-color: #272628;
+}
+.contact-buttons > a.fcc-social:hover, .contact-buttons > a.fcc-social:focus {
+  color: white;
+  background-color: #106E29;
+}
+.contact-buttons > a.twitter-social:hover, .contact-buttons > a.twitter-social:focus {
+  color: white;
+  background-color: #55acee;
+}
+.contact-buttons > a.linkedin-social:hover, .contact-buttons > a.linkedin-social:focus {
+  color: white;
+  background-color: #007bb5;
+}
+.contact-buttons > a.medium-social:hover, .contact-buttons > a.medium-social:focus {
+  color: white;
+  background-color: #3cb371;
 }
 
 
@@ -345,9 +430,13 @@ hr {
   color: white;
   text-align: center;
   height: 6em;
+  padding-top: 8px;
 }
 .footer p {
   padding-top: 1em;
+}
+.location {
+  padding-left: 1em;
 }
 
 
@@ -374,14 +463,8 @@ hr {
 
 /* About */
 @media (max-width: 767px) {
-  .about-right {
-    min-height: 15em;
-  }
-  .about-left {
-    height: 19em;
-  }
-  .about-right p {
-    margin: 30px;
+  .about-p {
+    margin: 15px;
   }
   .profile-pic {
     height: 18em;
@@ -401,8 +484,25 @@ hr {
   #work-section h2 {
   padding-bottom: 1em;
   }
+}
 
+/* Contact */
+@media (max-width: 767px) {
+  .contact-buttons {
+  height: 40px;
+}
 
+  .social {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    margin-right: 3px;
+  }
+  
+  .contact-section p {
+    margin: 20px;
+  }
   
 } /*end styling*/
 
