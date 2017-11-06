@@ -1,0 +1,120 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Random GIF Generator</title>
+
+  <!-- Bootstrap -->
+  <link href="../styles/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+
+  <style>
+    body {
+    background-image: url("http://www.adoptastray.com/wp-content/uploads/2014/07/paws2.jpg");
+  }
+
+  .page-header {
+    text-align: center;
+    color: white;
+    padding-top: 15px;
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  .gif-space {
+    padding: 20px;
+  }
+  .gif-item {
+  /*   why isn't this working? Trying to change div heigh to always be visible  */
+    margin: 0 auto;
+    padding: 4em;
+  /*   position: fixed;
+    top: 50%;
+    left: 50%; */
+  }
+
+  iframe {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  .iframe {
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+    position: relative;
+  }
+
+
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1px;
+  }
+
+
+  /* ---start stlying for smaller screens--- */
+  @media (max-width: 767px) {
+    .page-header h1 {
+      font-size: 2.5em;
+    }
+
+  }
+  /* end @media */
+  </style>
+</head>
+<!-- Put link to Font Awesome in "Stuff for <head>" under Settings -->
+
+<body>
+  <div class="page-header">
+    <h1>Random Doggo Generator</h1>
+  </div>
+  <div class="container">
+    <div class="gif-space">
+      <div class="gif-item">
+        <div class="iframe">
+          <iframe src="https://giphy.com/embed/26FmRLBRZfpMNwWdy" id="giphy-embed" frameborder="0" scrolling="no"></iframe>
+        </div>
+
+        <div class = "buttons">
+          <a id="tweetButton" target="_blank" href="https://giphy.com/gifs/26FmRLBRZfpMNwWdy/tweet"><button type='button' class="btn btn-info twitter"><i class="fa fa-twitter" aria-hidden="true"></i>
+          </button></a>
+          <button type='button' class="btn btn-default" id="new"><i class="fa fa-random" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    //clicking "new" gets a new dog gif
+    $(document).ready(function(){
+      $("#new").click(function() {
+        var imgSrc;
+        var imgId;
+        $.ajax ({
+          url: "//api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=dog",
+          type: "GET",
+          dataType: "json",
+          success: function(response) {
+            imgSrc = response.data.image_url;
+            imgId = response.data.id;
+            console.log(response);
+            $("#giphy-embed").attr("src", "https://giphy.com/embed/"+imgSrc);
+            $("#tweetButton").attr("href", "https://giphy.com/gifs/"+imgId+"/tweet")
+            return false;
+          },
+          error: function(e) {
+            console.log("uh oh");
+            }
+          });
+      });
+    });
+  </script>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="../scripts/bootstrap.min.js"></script>
+</body>
