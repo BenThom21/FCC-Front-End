@@ -8,7 +8,7 @@ gulp.task('default', function() {
 
 // Change destinations below
 gulp.task('sass', function(){
-  return gulp.src('source-files')
+  return gulp.src('site/CSS/style.scss')
     .pipe(sass()) // Using gulp-sass
-    .pipe(gulp.dest('CSS/styles.css'))
+    .pipe(gulp.dest('site/CSS'))
 });
