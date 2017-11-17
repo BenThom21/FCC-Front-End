@@ -20,45 +20,59 @@
 
 <body>
   
-  <div class="row">
-    <!-- Current Weather -->
-    <div class="weather-top">
-      <div class="location">
-        <div class="city">
-          <!-- [icon] location -->
+  <div class="column row">
+    <div class="small-10 small-centered columns">
+      <!-- Current Weather -->
+      <div class="weather-top small-8 small-centered columns">
+        <div class="location">
+          <div class="city">
+            <!-- [icon] location -->
+          </div>
+          <div class="country">
+            <!-- country -->
+          </div>
         </div>
-        <div class="country">
-          <!-- country -->
+        <div class="icon">
+          <!-- current weather icon -->
+        </div>
+        <div class="temp">
+          <!-- current temp goes here -->
+        </div>
+        <div class="far/cel">
+          <!-- farenheight/celcius slider -->
+          <div class="switch tiny">
+            <span class="tempToggle">F</span>
+            <input class="switch-input" id="tinySwitch" type="checkbox" name="tempSwitch">
+            <label class="switch-paddle" for="tinySwitch">
+              <span class="show-for-sr"></span>
+            </label>
+            <span class="tempToggle">C</span>
+          </div>
+        </div>
+        <div class="details">
+          <!-- current weather details -->
         </div>
       </div>
-      <div class="icon">
-        <!-- current weather icon -->
-      </div>
-      <div class="temp">
-        <!-- current temp goes here -->
-      </div>
-      <div class="farcel">
-        <!-- farenheight/celcius slider -->
-      </div>
-      <div class="details">
-        <!-- current weather details -->
-      </div>
-    </div>
-    <!-- hr or some sort of divider for forecast below -->
-    <!-- Forecast -->
-    <div class="weather-bottom">
-      <div class="bottom-title">
-        <h3>3-Day Forecast</h3>
-      </div>
-      <!-- How to make these in one row (w/out bootstrap) -->
-      <div class="forecast-day">
-        <!-- Day, Icon, High, Low, precip% -->
-      </div>
-      <div class="forecast-day">
-        <!-- Day, Icon, High, Low, precip% -->
-      </div>
-      <div class="forecast-day">
-        <!-- Day, Icon, High, Low, precip% -->
+      <!-- hr or some sort of divider for forecast below -->
+      <!-- Forecast -->
+      <div class="weather-bottom small-8 small-centered columns">
+        <div class="bottom-title">
+          <h3>3-Day Forecast</h3>
+        </div>
+        <div class="row">
+          <div class="small-4">
+            <!-- Day, Icon, High, Low, precip% -->
+
+            <!-- These will need vertical grids -->
+
+          </div>
+          <div class="small-4">
+            <!-- Day, Icon, High, Low, precip% -->
+          </div>
+          <div class="small-4">
+            <!-- Day, Icon, High, Low, precip% -->
+          </div>
+        </div>
       </div>
     </div>
   </div>
