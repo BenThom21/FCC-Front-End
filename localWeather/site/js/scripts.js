@@ -1,2 +1,2 @@
-// No "script" tag in this file!
+// No "script" tags in this file!
 
