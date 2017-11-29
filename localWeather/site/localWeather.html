@@ -20,10 +20,10 @@
 
 <body>
   
-  <div class="column row">
-    <div class="small-10 small-centered columns">
+  <div class="container">
+    <div class="col-sm-10">
       <!-- Current Weather -->
-      <div class="weather-top small-8 small-centered columns">
+      <div class="weather-top col-sm-8">
         <div class="location" id="loc">
           <div class="city">
             <!-- [icon] location -->
@@ -40,40 +40,33 @@
         </div>
         <div class="far/cel">
           <!-- farenheight/celcius slider -->
-          <div class="switch tiny">
-            <span class="tempToggle">F</span>
-            <input class="switch-input" id="tinySwitch" type="checkbox" name="tempSwitch">
-            <label class="switch-paddle" for="tinySwitch">
-              <span class="show-for-sr"></span>
-            </label>
-            <span class="tempToggle">C</span>
-          </div>
+          <!-- INSERT TOGGLE HERE -->
         </div>
         <div class="row details">
           <!-- current weather details -->
-          <div class="small-3 high"></div>
-          <div class="small-3 low"></div>
-          <div class="small-3 wind"></div>
-          <div class="small-3 precip"></div>
+          <div class="col-sm-3 high"></div>
+          <div class="col-sm-3 low"></div>
+          <div class="col-sm-3 wind"></div>
+          <div class="col-sm-3 precip"></div>
         </div>
       </div>
       <!-- hr or some sort of divider for forecast below -->
       <!-- Forecast -->
-      <div class="weather-bottom small-8 small-centered columns">
+      <div class="weather-bottom col-sm-8">
         <div class="bottom-title">
           <h3>3-Day Forecast</h3>
         </div>
         <div class="row">
-          <div class="small-4">
+          <div class="col-sm-4">
             <!-- Day, Icon, High, Low, precip% -->
 
             <!-- These will need vertical grids -->
 
           </div>
-          <div class="small-4">
+          <div class="col-sm-4">
             <!-- Day, Icon, High, Low, precip% -->
           </div>
-          <div class="small-4">
+          <div class="col-sm-4">
             <!-- Day, Icon, High, Low, precip% -->
           </div>
         </div>

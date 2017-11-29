@@ -2,4 +2,7 @@ body {
   background-color: #528EF0; }
 
 .column {
-  border: solid black 5px; }
+  border: solid black 3px; }
+
+.container {
+  border-radius: 25%; }
