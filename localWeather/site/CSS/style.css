@@ -1,8 +1,6 @@
 body {
   background-color: #528EF0; }
 
-.column {
-  border: solid black 3px; }
-
 .container {
-  border-radius: 25%; }
+  border-radius: 25%;
+  border: black solid 2px; }
