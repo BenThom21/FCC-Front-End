@@ -4,6 +4,7 @@
 //HTML5 Geolocation - Find User Location
 $(document).ready(function () {
     var location = document.getElementById("loc");
+    getLocation();
     function getLocation() {
         if (navigator.geolocation) {
             console.log('working');
@@ -15,12 +16,14 @@ $(document).ready(function () {
     function showPosition(position) {
         console.log('showing position');
         var latlong = position.coords.latitude + "," + position.coords.longitude;
+        var lat = position.coords.latitude;
+        var long = position.coords.longitude;
         console.log(latlong);
-        //reverse geocoding using latlng
+        //reverse geocoding using Google API
         var googleGeo = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + latlong + "&key=AIzaSyC64n2_xlIpSInEFKyx3SMLFA4GhmvnSf0";
         
-        location.innerHTML = "Latitude: " + position.coords.latitude + 
-        "<br>Longitude: " + position.coords.longitude; 
+        //change innter HTML to neighborhood, state <br> country
+        location.innerHTML = "Latitude: " + lat + 
+        "<br>Longitude: " + long; 
     }
-    getLocation();
 });
