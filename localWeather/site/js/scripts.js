@@ -14,9 +14,11 @@ $(document).ready(function () {
     }
     function showPosition(position) {
         console.log('showing position');
-        var latlong = position.coords.latitude = "," + position.coords.longitude;
+        var latlong = position.coords.latitude + "," + position.coords.longitude;
         console.log(latlong);
-        var apiGoogleLocation = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + latlong + "&key=AIzaSyC64n2_xlIpSInEFKyx3SMLFA4GhmvnSf0";
+        //reverse geocoding using latlng
+        var googleGeo = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + latlong + "&key=AIzaSyC64n2_xlIpSInEFKyx3SMLFA4GhmvnSf0";
+        
         location.innerHTML = "Latitude: " + position.coords.latitude + 
         "<br>Longitude: " + position.coords.longitude; 
     }
