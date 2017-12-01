@@ -1,29 +1,24 @@
 // No "script" tags in this file!
 
-var x = document.getElementById('loc');
-function getUserInfo () {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition, showError);
-    } else {
-        x.innerHTML = "Geolocation is not supported by this browser.";
-    }
-}
 
-//HTML5 Geolocation
+//HTML5 Geolocation - Find User Location
 $(document).ready(function () {
-    var x = document.getElementById("loc");
+    var location = document.getElementById("loc");
     function getLocation() {
         if (navigator.geolocation) {
-            console.log('yup');
+            console.log('working');
             navigator.geolocation.getCurrentPosition(showPosition);
         } else {
-            console.log('nope');
             x.innerHTML = "Geolocation is not supported by this browser.";
         }
     }
     function showPosition(position) {
         console.log('showing position');
-        x.innerHTML = "Latitude: " + position.coords.latitude + 
+        var latlong = position.coords.latitude = "," + position.coords.longitude;
+        console.log(latlong);
+        var apiGoogleLocation = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + latlong + "&key=AIzaSyC64n2_xlIpSInEFKyx3SMLFA4GhmvnSf0";
+        location.innerHTML = "Latitude: " + position.coords.latitude + 
         "<br>Longitude: " + position.coords.longitude; 
     }
+    getLocation();
 });
