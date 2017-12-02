@@ -16,6 +16,7 @@ $(document).ready(function () {
     function showPosition(position) {
         console.log('showing position');
         var latlong = position.coords.latitude + "," + position.coords.longitude;
+        // just in case I want them separate
         var lat = position.coords.latitude;
         var long = position.coords.longitude;
         console.log(latlong);
