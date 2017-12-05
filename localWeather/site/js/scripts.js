@@ -27,25 +27,53 @@ $(document).ready(function() {
         var googleGeo = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + latlong + "&key=AIzaSyC64n2_xlIpSInEFKyx3SMLFA4GhmvnSf0";
         console.log(googleGeo);
         //FIGURE THIS OUT
-        $.getJSON(googleGeo, function(data){
-            console.log(data);
+        // $.getJSON(googleGeo, function(data){
+        //     console.log(data);
         
-            var hood = data.results[0].address_components[2].short_name;
-            console.log(hood);
-            var city = data.results[0].address_components[3].short_name;
-            console.log(city);
-            var state = data.results[0].address_components[5].short_name;
-            console.log(state);
-            var country = data.results[0].address_components[6].short_name;
-            console.log(country);
-            document.getElementById("city").innerHTML = city;
-            // $('#city').innerHTML = data.results[0].address_components[2];
-        });
+        //     var hood = data.results[0].address_components[2].short_name;
+        //     console.log(hood);
+        //     var city = data.results[0].address_components[3].short_name;
+        //     console.log(city);
+        //     var state = data.results[0].address_components[5].short_name;
+        //     console.log(state);
+        //     var country = data.results[0].address_components[6].short_name;
+        //     console.log(country);
+
+        //     //test area
+        //     var cityName = document.getElementById("city");
+        //     cityName.innerHTML = city;
+        //     // document.getElementById("city").innerHTML = city;
+        // });
+
+        $.ajax({
+            type: 'GET',
+            url: googleGeo,
+            dataType: 'json',
+            async: false,
+            success: function(data) {
+                console.log("here: " + data);
+
+                var hood = data.results[0].address_components[2].short_name;
+                console.log(hood);
+                var city = data.results[0].address_components[3].short_name;
+                console.log(city);
+                var state = data.results[0].address_components[5].short_name;
+                console.log(state);
+                var country = data.results[0].address_components[6].short_name;
+                console.log(country);
+
+
+                document.getElementById("city").innerHTML = city;
+            }
+
+        })
 
         //change inner HTML to results[0].locality, results[0].administrative_area_level_1 <br> results[0].country
         location.innerHTML = "Latitude: " + lat + 
         "<br>Longitude: " + long;
     }
+
+
 
 
 
