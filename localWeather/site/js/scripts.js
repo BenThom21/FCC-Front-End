@@ -3,7 +3,7 @@
 
 
 //HTML5 Geolocation - Find User Location
-$(document).ready(function () {
+$(document).ready(function() {
     var location = document.getElementById("loc");
     getLocation();
     function getLocation() {
@@ -29,8 +29,16 @@ $(document).ready(function () {
         //FIGURE THIS OUT
         $.getJSON(googleGeo, function(data){
             console.log(data);
+        
             var hood = data.results[0].address_components[2].short_name;
             console.log(hood);
+            var city = data.results[0].address_components[3].short_name;
+            console.log(city);
+            var state = data.results[0].address_components[5].short_name;
+            console.log(state);
+            var country = data.results[0].address_components[6].short_name;
+            console.log(country);
+            document.getElementById("city").innerHTML = city;
             // $('#city').innerHTML = data.results[0].address_components[2];
         });
 
