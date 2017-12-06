@@ -19,9 +19,8 @@ $(document).ready(function() {
         console.log('showing position');
         var latlong = position.coords.latitude + "," + position.coords.longitude;
         // just in case I want them separate
-        var lat = position.coords.latitude;
-        var long = position.coords.longitude;
-        console.log(latlong);
+        // var lat = position.coords.latitude;
+        // var long = position.coords.longitude;
         //reverse geocoding using Google API (get your own API key)
         var googleGeo = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + latlong + "&key=AIzaSyC64n2_xlIpSInEFKyx3SMLFA4GhmvnSf0";
         console.log(googleGeo);
@@ -41,15 +40,10 @@ $(document).ready(function() {
                 document.getElementById("city").innerHTML = city;
                 document.getElementById("country").innerHTML = country;
             }
-
         });
-
-
     }
-
-
-
-
-
 });
+
+
+
 
