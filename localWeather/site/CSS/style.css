@@ -4,3 +4,6 @@ body {
 .container {
   border-radius: 25%;
   border: black solid 2px; }
+
+.location {
+  text-align: center; }

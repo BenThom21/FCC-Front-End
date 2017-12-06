@@ -5,7 +5,6 @@
 //HTML5 Geolocation - Find User Location
 $(document).ready(function() {
     var location = document.getElementById("loc");
-    var cityPlace = document.getElementById("city");
     getLocation();
     function getLocation() {
         if (navigator.geolocation) {
@@ -23,10 +22,10 @@ $(document).ready(function() {
         var lat = position.coords.latitude;
         var long = position.coords.longitude;
         console.log(latlong);
-        //reverse geocoding using Google API
+        //reverse geocoding using Google API (get your own API key)
         var googleGeo = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + latlong + "&key=AIzaSyC64n2_xlIpSInEFKyx3SMLFA4GhmvnSf0";
         console.log(googleGeo);
-
+        // accessing the api data 
         $.ajax({
             type: 'GET',
             url: googleGeo,
@@ -34,17 +33,13 @@ $(document).ready(function() {
             async: false,
             success: function(data) {
                 var hood = data.results[0].address_components[2].short_name;
-                console.log(hood);
                 var city = data.results[0].address_components[3].short_name;
-                console.log(city);
                 var state = data.results[0].address_components[5].short_name;
-                console.log(state);
                 var country = data.results[0].address_components[6].short_name;
-                console.log(country);
-
+                //now placing the data in spans with IDs
+                document.getElementById("hood").innerHTML = hood;
                 document.getElementById("city").innerHTML = city;
-                // cityPlace.innerHTML = "this: " + city;
-                console.log(cityPlace);
+                document.getElementById("country").innerHTML = country;
             }
 
         });
