@@ -5,16 +5,16 @@
 //HTML5 Geolocation - Find User Location
 $(document).ready(function() {
     var location = document.getElementById("loc");
+    var cityPlace = document.getElementById("city");
     getLocation();
     function getLocation() {
         if (navigator.geolocation) {
-            console.log('working');
+            console.log('geo working');
             navigator.geolocation.getCurrentPosition(showPosition);
         } else {
             location.innerHTML = "Geolocation is not supported by this browser.";
         }
     }
-
 
     function showPosition(position) {
         console.log('showing position');
@@ -63,10 +63,12 @@ $(document).ready(function() {
                 console.log(country);
 
 
-                document.getElementById("city").innerHTML = city;
+                // document.getElementById("city").innerHTML = city;
+                cityPlace.innerHTML = "this: " + city;
+                console.log(cityPlace);
             }
 
-        })
+        });
 
         //change inner HTML to results[0].locality, results[0].administrative_area_level_1 <br> results[0].country
         location.innerHTML = "Latitude: " + lat + 
