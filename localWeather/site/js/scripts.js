@@ -70,9 +70,7 @@ $(document).ready(function() {
 
         });
 
-        //change inner HTML to results[0].locality, results[0].administrative_area_level_1 <br> results[0].country
-        location.innerHTML = "Latitude: " + lat + 
-        "<br>Longitude: " + long;
+
     }
 
 
