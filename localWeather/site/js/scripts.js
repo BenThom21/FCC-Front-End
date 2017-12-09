@@ -1,7 +1,6 @@
 // No "script" tags in this file!
 
 
-
 //HTML5 Geolocation - Find User Location
 $(document).ready(function() {
     var location = document.getElementById("loc");
@@ -14,13 +13,10 @@ $(document).ready(function() {
             location.innerHTML = "Geolocation is not supported by this browser.";
         }
     }
-
+    
     function showPosition(position) {
         console.log('showing position');
         var latlong = position.coords.latitude + "," + position.coords.longitude;
-        // just in case I want them separate
-        // var lat = position.coords.latitude;
-        // var long = position.coords.longitude;
         //reverse geocoding using Google API (get your own API key)
         var googleGeo = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + latlong + "&key=AIzaSyC64n2_xlIpSInEFKyx3SMLFA4GhmvnSf0";
         console.log(googleGeo);
@@ -43,6 +39,9 @@ $(document).ready(function() {
         });
     }
 });
+// END GEOLOCATION
+
+
 
 
 
