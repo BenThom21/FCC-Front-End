@@ -2,6 +2,7 @@
 
 
 //HTML5 Geolocation - Find User Location
+var latlong = '';
 $(document).ready(function() {
     var location = document.getElementById("loc");
     getLocation();
@@ -41,7 +42,15 @@ $(document).ready(function() {
 });
 // END GEOLOCATION
 
-
+// Getting weather with DarkSky API
+darkSky();
+function darkSky() {
+    var url = ("https://api.darksky.net/forecast/236c175f398e2795371f80cad4375102/" + latlong);
+    $.getJSON(url, function(forecast) {
+        console.log(forecast);
+    });
+    console.log(url);
+}
 
 
 
