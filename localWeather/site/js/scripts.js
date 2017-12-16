@@ -38,46 +38,32 @@ $(document).ready(function() {
             }
         });
 
+        // Getting weather with DarkSky API
+        // I have learned that $.getJSON causes cors error - that's why it's jsonp + stringify
         function darkSky() {
             var url = ("https://api.darksky.net/forecast/236c175f398e2795371f80cad4375102/" + latlong);
             $.ajax({
                url: url,
                dataType: "jsonp",
                success: function(data) {
-                   console.log("darksky working");
-                   //this will need to be updated with each element and subsequent json object
+                   console.log("DarkSky working!:)");
                    console.log(data);
-                   document.getElementById("current").innerHTML = JSON.stringify(data.currently);
+                   //math.round puts temperature at the nearest whole number
+                   var temp = Math.round(JSON.stringify(data.currently.temperature));
+                   var high = Math.round(JSON.stringify(data.daily.data[0].temperatureHigh));
+                   var low = Math.round(JSON.stringify(data.daily.data[0].temperatureLow));
+                   var precip = (JSON.stringify(data.daily.data[0].precipProbability)*100);
+                   document.getElementById("current").innerHTML = temp;
+                   document.getElementById("high").innerHTML = high;
+                   document.getElementById("low").innerHTML = low;
+                   document.getElementById("precip").innerHTML = precip;
+                   //data for forecast as well
                }
             });
         }
         darkSky();
     }
 });
-
-
-//making sure that this can be pulled out of previous function before moving forward
-//it's needed for darksky
-// console.log(latlong);
-
-
-// Getting weather with DarkSky API
-// I have learned that $.getJSON causes cors error
-// need to pull latlong out of local scope and into this function
-
-// function darkSky() {
-//     var url = ("https://api.darksky.net/forecast/236c175f398e2795371f80cad4375102/" + latlong);
-//     $.ajax({
-//        url: url,
-//        dataType: "jsonp",
-//        success: function(data) {
-//            //this will need to be updated with each element and subsequent json object
-//            console.log(data);
-//            document.getElementById("current").innerHTML = JSON.stringify(data.currently);
-//        }
-//     });
-// }
-// darkSky();
 
 
 
