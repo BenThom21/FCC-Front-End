@@ -52,12 +52,34 @@ $(document).ready(function() {
                    var temp = Math.round(JSON.stringify(data.currently.temperature));
                    var high = Math.round(JSON.stringify(data.daily.data[0].temperatureHigh));
                    var low = Math.round(JSON.stringify(data.daily.data[0].temperatureLow));
-                   var precip = (JSON.stringify(data.daily.data[0].precipProbability)*100);
+                   var precip = Math.floor((JSON.stringify(data.daily.data[0].precipProbability)*100));
                    document.getElementById("current").innerHTML = temp;
                    document.getElementById("high").innerHTML = high;
                    document.getElementById("low").innerHTML = low;
                    document.getElementById("precip").innerHTML = precip;
                    //data for forecast as well
+                   //day 1
+                   var tmrwHigh = Math.floor(JSON.stringify(data.daily.data[1].temperatureHigh));
+                   var tmrwLow = Math.round(JSON.stringify(data.daily.data[1].temperatureLow));
+                   var tmrwPrecip = Math.floor((JSON.stringify(data.daily.data[1].precipProbability)*100));
+                   document.getElementById("dayOneHigh").innerHTML = tmrwHigh;
+                   document.getElementById("dayOneLow").innerHTML = tmrwLow;
+                   document.getElementById("dayOnePrecip").innerHTML = tmrwPrecip;
+                   //day 2
+                   var twoHigh = Math.floor(JSON.stringify(data.daily.data[2].temperatureHigh));
+                   var twoLow = Math.round(JSON.stringify(data.daily.data[2].temperatureLow));
+                   var twoPrecip = Math.floor((JSON.stringify(data.daily.data[2].precipProbability)*100));
+                   document.getElementById("dayTwoHigh").innerHTML = twoHigh;
+                   document.getElementById("dayTwoLow").innerHTML = twoLow;
+                   document.getElementById("dayTwoPrecip").innerHTML = twoPrecip;
+                   //day 3
+                   var threeHigh = Math.floor(JSON.stringify(data.daily.data[3].temperatureHigh));
+                   var threeLow = Math.round(JSON.stringify(data.daily.data[3].temperatureLow));
+                   var threePrecip = Math.floor((JSON.stringify(data.daily.data[3].precipProbability)*100));
+                   document.getElementById("dayThreeHigh").innerHTML = threeHigh;
+                   document.getElementById("dayThreeLow").innerHTML = threeLow;
+                   document.getElementById("dayThreePrecip").innerHTML = threePrecip;
+
                }
             });
         }
