@@ -27,6 +27,8 @@ $(document).ready(function() {
             dataType: 'json',
             async: false,
             success: function(data) {
+                console.log(data);
+                //This changed big time when I was home, check which #s in array are uiversal
                 var hood = data.results[0].address_components[2].short_name;
                 var city = data.results[0].address_components[3].short_name;
                 var state = data.results[0].address_components[5].short_name;
@@ -79,7 +81,6 @@ $(document).ready(function() {
                    document.getElementById("dayThreeHigh").innerHTML = threeHigh;
                    document.getElementById("dayThreeLow").innerHTML = threeLow;
                    document.getElementById("dayThreePrecip").innerHTML = threePrecip + "%";
-
                }
             });
         }
@@ -87,5 +88,18 @@ $(document).ready(function() {
     }
 });
 
+function day() {
+    var day = new Date();
+    var week = new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
+    console.log(week);
+    var tom = document.getElementById("tomorrow");
+    tom.innerHTML = week[day.getDay()+1];
+    var next = document.getElementById("twodays");
+    next.innerHTML = week[day.getDay()+2];
+    var two = document.getElementById("threedays");
+    two.innerHTML = week[day.getDay()+3];
+
+}
+day();
 
 
