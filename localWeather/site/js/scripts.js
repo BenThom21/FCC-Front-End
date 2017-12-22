@@ -92,12 +92,26 @@ function day() {
     var day = new Date();
     var week = new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
     console.log(week);
-    var tom = document.getElementById("tomorrow");
-    tom.innerHTML = week[day.getDay()+1];
-    var next = document.getElementById("twodays");
-    next.innerHTML = week[day.getDay()+2];
-    var two = document.getElementById("threedays");
-    two.innerHTML = week[day.getDay()+3];
+
+    for (i=0; i<week.length; i++) {
+
+        console.log(week[day.getDay(i)+1]);
+
+        // var tom = document.getElementById("tomorrow");
+        // tom.innerHTML = week[day.getDay()+1];
+        // var next = document.getElementById("twodays");
+        // next.innerHTML = week[day.getDay()+2];
+        // var two = document.getElementById("threedays");
+        // two.innerHTML = week[day.getDay()+3]; 
+    }
+
+    //OLD WAY THAT GIVES 'UNDEFINED' BY SUNDAY
+    // var tom = document.getElementById("tomorrow");
+    // tom.innerHTML = week[day.getDay()+1];
+    // var next = document.getElementById("twodays");
+    // next.innerHTML = week[day.getDay()+2];
+    // var two = document.getElementById("threedays");
+    // two.innerHTML = week[day.getDay()+3];
 
 }
 day();
