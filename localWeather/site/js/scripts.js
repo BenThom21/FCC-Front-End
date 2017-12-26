@@ -88,6 +88,8 @@ $(document).ready(function() {
     }
 });
 
+
+//calculating day of week for forecast
 function day() {
     var day = new Date();
     var week = new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
@@ -103,4 +105,43 @@ function day() {
 }
 day();
 
-
+//Skycons for DarkSky API
+function weatherIcon (weatherType) {
+    console.log(weatherType);
+    // var skycon = new Skycons({"color": "orange"});
+    
+    switch (weatherType) {
+      case "clear-day":
+        skycon.add("icon", Skycons.CLEAR_DAY); 
+        break;
+      case "clear-night":
+        skycon.add("icon", Skycons.CLEAR_NIGHT);
+        break;
+      case "partly-cloudy-day":
+        skycon.add("icon", Skycons.PARTLY_CLOUDY_DAY);
+        break;
+      case "partly-cloudy-night":
+        skycon.add("icon", Skycons.PARTLY_CLOUDY_NIGHT);
+        break;
+      case "cloudy":
+        skycon.add("icon", Skycons.CLOUDY);
+        break;
+      case "rain":
+        skycon.add("icon", Skycons.RAIN);
+        break;
+      case "sleet":
+        skycon.add("icon", Skycons.SLEET);
+        break;
+      case "snow":
+        skycon.add("icon", Skycons.SNOW);
+        break;
+      case "wind":
+        skycon.add("icon", Skycons.WIND);
+        break;
+      case "fog":
+        skycon.add("icon", Skycons.FOG);
+        break;
+    }
+    skycon.play();
+  }
+  weatherIcon();
