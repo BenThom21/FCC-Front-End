@@ -81,6 +81,9 @@ $(document).ready(function() {
                    document.getElementById("dayThreeHigh").innerHTML = threeHigh;
                    document.getElementById("dayThreeLow").innerHTML = threeLow;
                    document.getElementById("dayThreePrecip").innerHTML = threePrecip + "%";
+
+                   var currentIcon = data.currently.icon;
+                   console.log(currentIcon);
                }
             });
         }
@@ -108,7 +111,7 @@ day();
 //Skycons for DarkSky API
 function weatherIcon (weatherType) {
     console.log(weatherType);
-    // var skycon = new Skycons({"color": "orange"});
+    var skycon = new Skycons({"color": "orange"});
     
     switch (weatherType) {
       case "clear-day":
