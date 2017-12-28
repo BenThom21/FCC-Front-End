@@ -51,6 +51,7 @@ $(document).ready(function() {
                    console.log("DarkSky working!:)");
                    console.log(data);
                    //math.round puts temperature at the nearest whole number
+                   //I could cut a LOT of this down with jQuery...
                    var temp = Math.round(JSON.stringify(data.currently.temperature));
                    var high = Math.round(JSON.stringify(data.daily.data[0].temperatureHigh));
                    var low = Math.round(JSON.stringify(data.daily.data[0].temperatureLow));
@@ -82,47 +83,13 @@ $(document).ready(function() {
                    document.getElementById("dayThreeLow").innerHTML = threeLow;
                    document.getElementById("dayThreePrecip").innerHTML = threePrecip + "%";
 
-                   var currentIcon = data.currently.icon;
-                   console.log(currentIcon);
-                   var skycons = new Skycons({"color": "orange"});
-                   switch (currentIcon) {
-                          case "clear-day":
-                            skycons.add("icon", Skycons.CLEAR_DAY); 
-                            break;
-                          case "clear-night":
-                            skycons.add("icon", Skycons.CLEAR_NIGHT);
-                            break;
-                          case "partly-cloudy-day":
-                            skycons.add("icon", Skycons.PARTLY_CLOUDY_DAY);
-                            break;
-                          case "partly-cloudy-night":
-                            skycons.add("icon", Skycons.PARTLY_CLOUDY_NIGHT);
-                            break;
-                          case "cloudy":
-                            skycons.add("icon", Skycons.CLOUDY);
-                            break;
-                          case "rain":
-                            skycons.add("icon", Skycons.RAIN);
-                            break;
-                          case "sleet":
-                            skycons.add("icon", Skycons.SLEET);
-                            break;
-                          case "snow":
-                            skycons.add("icon", Skycons.SNOW);
-                            break;
-                          case "wind":
-                            skycons.add("icon", Skycons.WIND);
-                            break;
-                          case "fog":
-                            skycons.add("icon", Skycons.FOG);
-                            break;
-                            default:
-                            "clear-day";
-                        }
-                    skycons.play();
+                   IconGen(data.currently.icon);
                 }
             });
-        }
+            function IconGen(desc) {
+                console.log("pulled it out");
+            }
+        } //end Darsky funciton
         darkSky();
     }
 });
@@ -143,6 +110,46 @@ function day() {
     }
 }
 day();
+
+
+
+                    // var skycons = new Skycons({"color": "orange"});
+                    // switch (currentIcon) {
+                    //       case "clear-day":
+                    //         skycons.add("icon", Skycons.CLEAR_DAY); 
+                    //         break;
+                    //       case "clear-night":
+                    //         skycons.add("icon", Skycons.CLEAR_NIGHT);
+                    //         break;
+                    //       case "partly-cloudy-day":
+                    //         skycons.add("icon", Skycons.PARTLY_CLOUDY_DAY);
+                    //         break;
+                    //       case "partly-cloudy-night":
+                    //         skycons.add("icon", Skycons.PARTLY_CLOUDY_NIGHT);
+                    //         break;
+                    //       case "cloudy":
+                    //         skycons.add("icon", Skycons.CLOUDY);
+                    //         break;
+                    //       case "rain":
+                    //         skycons.add("icon", Skycons.RAIN);
+                    //         break;
+                    //       case "sleet":
+                    //         skycons.add("icon", Skycons.SLEET);
+                    //         break;
+                    //       case "snow":
+                    //         skycons.add("icon", Skycons.SNOW);
+                    //         break;
+                    //       case "wind":
+                    //         skycons.add("icon", Skycons.WIND);
+                    //         break;
+                    //       case "fog":
+                    //         skycons.add("icon", Skycons.FOG);
+                    //         break;
+                    //         default:
+                    //         "clear-day";
+                    //     }
+                    // skycons.play();
+
 
 //Skycons for DarkSky API
 // function weatherIcon (weatherType) {
