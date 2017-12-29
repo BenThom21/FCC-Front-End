@@ -88,6 +88,42 @@ $(document).ready(function() {
             });
             function IconGen(desc) {
                 console.log("pulled it out");
+                var skycons = new Skycons({"color": "orange"});
+                switch (RTCSessionDescription) {
+                        case "clear-day":
+                        skycons.add("icon", Skycons.CLEAR_DAY); 
+                        break;
+                        case "clear-night":
+                        skycons.add("icon", Skycons.CLEAR_NIGHT);
+                        break;
+                        case "partly-cloudy-day":
+                        skycons.add("icon", Skycons.PARTLY_CLOUDY_DAY);
+                        break;
+                        case "partly-cloudy-night":
+                        skycons.add("icon", Skycons.PARTLY_CLOUDY_NIGHT);
+                        break;
+                        case "cloudy":
+                        skycons.add("icon", Skycons.CLOUDY);
+                        break;
+                        case "rain":
+                        skycons.add("icon", Skycons.RAIN);
+                        break;
+                        case "sleet":
+                        skycons.add("icon", Skycons.SLEET);
+                        break;
+                        case "snow":
+                        skycons.add("icon", Skycons.SNOW);
+                        break;
+                        case "wind":
+                        skycons.add("icon", Skycons.WIND);
+                        break;
+                        case "fog":
+                        skycons.add("icon", Skycons.FOG);
+                        break;
+                        default:
+                        "clear-day";
+                    }
+                skycons.play();
             }
         } //end Darsky funciton
         darkSky();
