@@ -84,44 +84,46 @@ $(document).ready(function() {
                    document.getElementById("dayThreePrecip").innerHTML = threePrecip + "%";
 
                    IconGen(data.currently.icon);
+                   //repeat this for the forecast data?
                 }
             });
             function IconGen(desc) {
                 console.log("pulled it out");
-                var skycons = new Skycons({"color": "orange"});
+                console.log(desc);
                 switch (desc) {
                     case "clear-day":
-                    skycons.add("icon", Skycons.CLEAR_DAY); 
+                    $('#icon').addClass('wi wi-day-sunny');
                     break;
                     case "clear-night":
-                    skycons.add("icon", Skycons.CLEAR_NIGHT);
+                    $('#icon').addClass('wi wi-night-clear');
                     break;
                     case "partly-cloudy-day":
-                    skycons.add("icon", Skycons.PARTLY_CLOUDY_DAY);
+                    $('#icon').addClass('wi wi-day-cloudy'); 
                     break;
                     case "partly-cloudy-night":
-                    skycons.add("icon", Skycons.PARTLY_CLOUDY_NIGHT);
-                    break;
-                    case "cloudy":
-                    skycons.add("icon", Skycons.CLOUDY);
+                    $('#icon').addClass('wi wi-night-alt-cloudy'); 
                     break;
                     case "rain":
-                    skycons.add("icon", Skycons.RAIN);
-                    break;
-                    case "sleet":
-                    skycons.add("icon", Skycons.SLEET);
+                    $('#icon').addClass('wi wi-rain'); 
                     break;
                     case "snow":
-                    skycons.add("icon", Skycons.SNOW);
+                    $('#icon').addClass('wi wi-snow'); 
+                    break;
+                    case "sleet":
+                    $('#icon').addClass('wi wi-sleet'); 
                     break;
                     case "wind":
-                    skycons.add("icon", Skycons.WIND);
+                    $('#icon').addClass('wi wi-strong-wind'); 
+                    break;
+                    case "cloudy":
+                    $('#icon').addClass('wi wi-cloud'); 
                     break;
                     case "fog":
-                    skycons.add("icon", Skycons.FOG);
+                    $('#icon').addClass('wi wi-fog'); 
                     break;
                     default:
                     "clear-day";
+                    
                 }
             }
         } //end Darsky funciton
