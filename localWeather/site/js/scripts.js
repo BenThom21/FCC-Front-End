@@ -82,8 +82,6 @@ $(document).ready(function() {
                    document.getElementById("dayThreePrecip").innerHTML = threePrecip + "%";
 
                    IconGen(data.currently.icon);
-                //    ForeOne(data.daily.data[1].icon);
-                   //repeat this for the forecast data?
                 }
             });
             function IconGen(desc) {
@@ -148,3 +146,34 @@ function day() {
 day();
 
 
+//Fahrenheit to Celsius toggle
+$(function(){
+    $(".toggle").click(function () {
+       $("#toggle").toggleClass("wi wi-celsius").toggleClass("wi wi-fahrenheit");
+    });
+});
+
+//TODO: FIGURE THIS OUT!!!
+// function toggleTemp(val, x) {
+//     if (x == "Celcius") {
+//       return Math.round(val * 1.8 + 32);
+//     } else {
+//       return Math.round((val - 32) / 1.8);
+//     }  
+// }
+
+
+// on click - if the button has a class of "wi-celsius", then calculate the number of span#current
+//            if the button has a class of "wi-farenheit", then change back to fahrenheit
+//   doing this on click will eliminate it calculating the default fahrenheit
+
+$(function() {
+    $(".toggle").click(function(val, x) {
+        if (x == "wi-celsius") {
+            return Math.round((val - 32) / 1.8);
+        }
+        else {
+            return Math.round((val * 1.8) +32);
+        }
+    })
+})

@@ -5,8 +5,9 @@ body {
   border-radius: 25%;
   border: black solid 2px; }
 
-.location, .wi {
+.location {
   text-align: center; }
 
 .wi {
-  font-size: 3rem; }
+  font-size: 3rem;
+  text-align: center; }
