@@ -85,7 +85,6 @@ $(document).ready(function() {
                 }
             });
             function IconGen(desc) {
-                console.log("pulled it out");
                 console.log(desc);
                 switch (desc) {
                     case "clear-day":
@@ -149,31 +148,38 @@ day();
 //Fahrenheit to Celsius toggle
 $(function(){
     $(".toggle").click(function () {
-       $("#toggle").toggleClass("wi wi-celsius").toggleClass("wi wi-fahrenheit");
+       $(this).text(function(i, text){
+           return text === "C°" ? "F°" : "C°";
+       })
     });
-});
+ });
 
 //TODO: FIGURE THIS OUT!!!
-// function toggleTemp(val, x) {
-//     if (x == "Celcius") {
-//       return Math.round(val * 1.8 + 32);
-//     } else {
-//       return Math.round((val - 32) / 1.8);
-//     }  
-// }
-
-
-// on click - if the button has a class of "wi-celsius", then calculate the number of span#current
-//            if the button has a class of "wi-farenheit", then change back to fahrenheit
-//   doing this on click will eliminate it calculating the default fahrenheit
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+// Calculating fahrenheit to celcius.
+function toggleTemp(val, x) {
+    console.log(x + "=this is x");
+    if (x == "F°") {
+      return Math.round(val * 1.8 + 32);
+    } else {
+      return Math.round((val - 32) / 1.8);
+    }  
+}
+// Button from Fahrenheit to Celcius
+function toggleFC(val) {
+    console.log("this is val = " + val);
+    if (val == "F°") {
+      return "F°";
+    }  
+    return "C°";
+}
 
 $(function() {
-    $(".toggle").click(function(val, x) {
-        if (x == "wi-celsius") {
-            return Math.round((val - 32) / 1.8);
-        }
-        else {
-            return Math.round((val * 1.8) +32);
-        }
-    })
-})
+    // Controlling click event of button toggle fahrenheit to celcius and vice versa
+      $(".toggle").click(function() {
+        var degree = toggleFC($(this).text());
+        $(this).text(degree);
+        var temp = toggleTemp($("#current").text(), degree);
+        $("#current").text(temp);
+      });
+});
