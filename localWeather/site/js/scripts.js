@@ -51,35 +51,35 @@ $(document).ready(function() {
                    //math.round puts temperature at the nearest whole number
                    //I could cut a LOT of this down with jQuery...
                    var temp = Math.round(JSON.stringify(data.currently.temperature));
-                   var high = Math.round(JSON.stringify(data.daily.data[0].temperatureHigh));
-                   var low = Math.round(JSON.stringify(data.daily.data[0].temperatureLow));
-                   var precip = Math.floor((JSON.stringify(data.daily.data[0].precipProbability)*100));
+                //    var high = Math.round(JSON.stringify(data.daily.data[0].temperatureHigh));
+                //    var low = Math.round(JSON.stringify(data.daily.data[0].temperatureLow));
+                //    var precip = Math.floor((JSON.stringify(data.daily.data[0].precipProbability)*100));
                    document.getElementById("current").innerHTML = temp;
-                   document.getElementById("high").innerHTML = high;
-                   document.getElementById("low").innerHTML = low;
-                   document.getElementById("precip").innerHTML = precip + "%";
+                //    document.getElementById("high").innerHTML = high;
+                //    document.getElementById("low").innerHTML = low;
+                //    document.getElementById("precip").innerHTML = precip + "%";
                    //data for forecast as well
                    //day 1
-                   var tmrwHigh = Math.floor(JSON.stringify(data.daily.data[1].temperatureHigh));
-                   var tmrwLow = Math.round(JSON.stringify(data.daily.data[1].temperatureLow));
-                   var tmrwPrecip = Math.floor((JSON.stringify(data.daily.data[1].precipProbability)*100));
-                   document.getElementById("dayOneHigh").innerHTML = tmrwHigh + "&deg;";
-                   document.getElementById("dayOneLow").innerHTML = tmrwLow + "&deg;";
-                   document.getElementById("dayOnePrecip").innerHTML = tmrwPrecip + "%";
+                //    var tmrwHigh = Math.floor(JSON.stringify(data.daily.data[1].temperatureHigh));
+                //    var tmrwLow = Math.round(JSON.stringify(data.daily.data[1].temperatureLow));
+                //    var tmrwPrecip = Math.floor((JSON.stringify(data.daily.data[1].precipProbability)*100));
+                //    document.getElementById("dayOneHigh").innerHTML = tmrwHigh + "&deg;";
+                //    document.getElementById("dayOneLow").innerHTML = tmrwLow + "&deg;";
+                //    document.getElementById("dayOnePrecip").innerHTML = tmrwPrecip + "%";
                    //day 2
-                   var twoHigh = Math.floor(JSON.stringify(data.daily.data[2].temperatureHigh));
-                   var twoLow = Math.round(JSON.stringify(data.daily.data[2].temperatureLow));
-                   var twoPrecip = Math.floor((JSON.stringify(data.daily.data[2].precipProbability)*100));
-                   document.getElementById("dayTwoHigh").innerHTML = twoHigh + "&deg;";
-                   document.getElementById("dayTwoLow").innerHTML = twoLow + "&deg;";
-                   document.getElementById("dayTwoPrecip").innerHTML = twoPrecip + "%";
+                //    var twoHigh = Math.floor(JSON.stringify(data.daily.data[2].temperatureHigh));
+                //    var twoLow = Math.round(JSON.stringify(data.daily.data[2].temperatureLow));
+                //    var twoPrecip = Math.floor((JSON.stringify(data.daily.data[2].precipProbability)*100));
+                //    document.getElementById("dayTwoHigh").innerHTML = twoHigh + "&deg;";
+                //    document.getElementById("dayTwoLow").innerHTML = twoLow + "&deg;";
+                //    document.getElementById("dayTwoPrecip").innerHTML = twoPrecip + "%";
                    //day 3
-                   var threeHigh = Math.floor(JSON.stringify(data.daily.data[3].temperatureHigh));
-                   var threeLow = Math.round(JSON.stringify(data.daily.data[3].temperatureLow));
-                   var threePrecip = Math.floor((JSON.stringify(data.daily.data[3].precipProbability)*100));
-                   document.getElementById("dayThreeHigh").innerHTML = threeHigh + "&deg;";
-                   document.getElementById("dayThreeLow").innerHTML = threeLow + "&deg;";
-                   document.getElementById("dayThreePrecip").innerHTML = threePrecip + "%";
+                //    var threeHigh = Math.floor(JSON.stringify(data.daily.data[3].temperatureHigh));
+                //    var threeLow = Math.round(JSON.stringify(data.daily.data[3].temperatureLow));
+                //    var threePrecip = Math.floor((JSON.stringify(data.daily.data[3].precipProbability)*100));
+                //    document.getElementById("dayThreeHigh").innerHTML = threeHigh + "&deg;";
+                //    document.getElementById("dayThreeLow").innerHTML = threeLow + "&deg;";
+                //    document.getElementById("dayThreePrecip").innerHTML = threePrecip + "%";
 
                    IconGen(data.currently.icon);
                 }
@@ -129,20 +129,20 @@ $(document).ready(function() {
 
 
 //calculating day of week for forecast
-function day() {
-    var day = new Date();
-    var week = new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
+// function day() {
+//     var day = new Date();
+//     var week = new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
 
-    for (i=0; i<14; i++) {
-        var tom = document.getElementById("tomorrow");
-        tom.innerHTML = week[(day.getDay()+1) % 7];
-        var next = document.getElementById("twodays");
-        next.innerHTML = week[(day.getDay()+2) % 7];
-        var two = document.getElementById("threedays");
-        two.innerHTML = week[(day.getDay()+3) % 7]; 
-    }
-}
-day();
+//     for (i=0; i<14; i++) {
+//         var tom = document.getElementById("tomorrow");
+//         tom.innerHTML = week[(day.getDay()+1) % 7];
+//         var next = document.getElementById("twodays");
+//         next.innerHTML = week[(day.getDay()+2) % 7];
+//         var two = document.getElementById("threedays");
+//         two.innerHTML = week[(day.getDay()+3) % 7]; 
+//     }
+// }
+// day();
 
 
 //Fahrenheit to Celsius toggle
@@ -156,26 +156,20 @@ $(function(){
 
 //TODO: FIGURE THIS OUT!!!
 /////////////////////////////////////////////////////////////////////////////////////////////////////
-// Calculating fahrenheit to celcius.
 function toggleTemp(val, x) {
-    console.log(x + "=this is x");
     if (x == "F°") {
       return Math.round(val * 1.8 + 32);
     } else {
       return Math.round((val - 32) / 1.8);
     }  
 }
-// Button from Fahrenheit to Celcius
 function toggleFC(val) {
-    console.log("this is val = " + val);
     if (val == "F°") {
       return "F°";
     }  
     return "C°";
 }
-
 $(function() {
-    // Controlling click event of button toggle fahrenheit to celcius and vice versa
       $(".toggle").click(function() {
         var degree = toggleFC($(this).text());
         $(this).text(degree);
