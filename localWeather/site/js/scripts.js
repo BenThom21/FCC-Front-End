@@ -177,3 +177,15 @@ $(function() {
         $("#current").text(temp);
       });
 });
+
+//changing background color based on current weather
+$(
+    function changeColor() {
+        if (document.getElementById('current').value <= 50) {
+            $('.container').addClass('cold');
+        } 
+        // else (document.getElementById('current').value < 32 && document.getElementById('current').value > 55) {
+        //     $('.container').addClass('cool');
+    }
+)
+    
