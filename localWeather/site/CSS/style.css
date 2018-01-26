@@ -3,7 +3,8 @@
   border: black solid 2px; }
 
 .location {
-  text-align: center; }
+  text-align: center;
+  background-color: red; }
 
 .wi {
   font-size: 3rem;
