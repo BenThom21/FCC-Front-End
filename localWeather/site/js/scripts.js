@@ -11,7 +11,6 @@ $(document).ready(function() {
             location.innerHTML = "Geolocation is not supported by this browser.";
         }
     }
-    var latlong = '';
     function showPosition(position) {
         console.log('showing position');
         var latlong = position.coords.latitude + "," + position.coords.longitude;
@@ -82,6 +81,7 @@ $(document).ready(function() {
                 //    document.getElementById("dayThreePrecip").innerHTML = threePrecip + "%";
 
                    IconGen(data.currently.icon);
+                   ColorChange(Math.round(data.currently.temperature));
                 }
             });
             function IconGen(desc) {
@@ -118,15 +118,28 @@ $(document).ready(function() {
                     $('#icon').addClass('wi wi-fog'); 
                     break;
                     default:
-                    "clear-day";
-                    
+                    "clear-day"; 
+                }
+            }
+            function ColorChange(val) {
+                console.log(val + " is this shit");
+                // return val;
+                if (val <= 32) {
+                    $('.container').addClass('cold');
+                } else if (val > 32 && val < 55) {
+                    $('.container').addClass('cool');
+                } else if (val > 55 && val < 80) {
+                    $('.container').addClass('warm');
+                } else if (val > 80) {
+                    $('.container').addClass('hot');
+                } else {
+                    console.log("whoops, you done messed up!");
                 }
             }
         } //end Darsky funciton
         darkSky();
     }
 });
-
 
 //calculating day of week for forecast
 // function day() {
@@ -178,14 +191,4 @@ $(function() {
       });
 });
 
-//changing background color based on current weather
-$(
-    function changeColor() {
-        if (document.getElementById('current').value <= 50) {
-            $('.container').addClass('cold');
-        } 
-        // else (document.getElementById('current').value < 32 && document.getElementById('current').value > 55) {
-        //     $('.container').addClass('cool');
-    }
-)
     
