@@ -1,15 +1,37 @@
 
 .container {
     border-radius: 33%;
-    border: black solid 2px;
+    border: rgb(119, 117, 117) solid 2px;
+    // TODO: Width issues
 }
 
 .location {
-    text-align: center;}
+    text-align: center;
+    font-size: 1.3em;
+}
 
 .wi {
     font-size: 3rem;
     text-align: center;
+}
+
+
+// Keeping everything in the center
+.icon, .temp, .tempToggle {
+    text-align: center;
+}
+.icon {
+    margin-top: 40px;
+    margin-bottom: 10px;
+    transform:scale(1.5,1.5);
+}
+.temp {
+    font-size: 3em;
+    font-weight: bold;
+}
+.tempToggle {
+    margin: 5px;
+    font-size: 1.2em;
 }
 
 

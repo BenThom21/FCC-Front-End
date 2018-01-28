@@ -1,13 +1,30 @@
 .container {
   border-radius: 33%;
-  border: black solid 2px; }
+  border: #777575 solid 2px; }
 
 .location {
-  text-align: center; }
+  text-align: center;
+  font-size: 1.3em; }
 
 .wi {
   font-size: 3rem;
   text-align: center; }
+
+.icon, .temp, .tempToggle {
+  text-align: center; }
+
+.icon {
+  margin-top: 40px;
+  margin-bottom: 10px;
+  transform: scale(1.5, 1.5); }
+
+.temp {
+  font-size: 3em;
+  font-weight: bold; }
+
+.tempToggle {
+  margin: 5px;
+  font-size: 1.2em; }
 
 .cold {
   background-image: linear-gradient(135deg, #72EDF2 10%, #5151E5 100%); }
