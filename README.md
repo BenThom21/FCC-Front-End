@@ -1,5 +1,6 @@
 # FCC-Front-End
-Repo for my Free Code Camp Front End Certification projects
+Repo for my [Free Code Camp Front End Certification](https://www.freecodecamp.org) projects
 
 Please take a look!
-Each folder contains a challenge. In the README for each challenge are the rules for the particular project and specific thoughts on each project.
+Each folder contains a project for the Free Code Camp certification. 
+For more information on each completed project, visit my website at [benthompson.online](https://benthompson.online/).
