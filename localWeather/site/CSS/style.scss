@@ -1,13 +1,18 @@
 
 .container {
-    border-radius: 33%;
+    border-radius: 25px;
     border: rgb(119, 117, 117) solid 2px;
     // TODO: Width issues
     height: 75vh;
     display: flex;
     align-content: center;
     align-items: center;
-
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
 }
 
 .location {
