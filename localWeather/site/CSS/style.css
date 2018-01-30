@@ -1,6 +1,10 @@
 .container {
   border-radius: 33%;
-  border: #777575 solid 2px; }
+  border: #777575 solid 2px;
+  height: 75vh;
+  display: flex;
+  align-content: center;
+  align-items: center; }
 
 .location {
   text-align: center;
