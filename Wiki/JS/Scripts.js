@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    var searchTerm = $('#search').val();
+    var searchTerm = $('#searchTerm').val();
     var url = "http://en.wikipedia.org/w/api.php?action=opensearch&search=" + searchTerm + "&format=json&callback=?",'
     $.ajax({
         type: 'GET',
